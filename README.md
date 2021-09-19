@@ -4,11 +4,13 @@
 Simply run the main.py file from the root directory and provide appropriate arguments. Use the -h flag for help.
 
 ```
+Replace the python invocation for however it is called on your system.
+
 ## Windows
-python .\main.py -i 1 -o output.txt -a LINK_TO_API
+python .\main.py -i CANDIDATE_ID -o output.txt -a LINK_TO_API
 
 ## Linux
-python main.py -i 1 -o output.txt -a LINK_TO_API
+python main.py -i CANDIDATE_ID -o output.txt -a LINK_TO_API
 ```
 
 ## Libraries Required
@@ -26,9 +28,11 @@ Should already be installed:
 Run this from the root project folder 
 
 ```
+Replace the python invocation for however it is called on your system.
+
 ## Windows
-python -m pytest .\tests\weather_test.py .\tests\api_test.py
+python -m pytest .\tests\weather_test.py 
 
 ## Linux
-python -m pytest tests/weather_test.py /tests/api_test.py
+python -m pytest tests/weather_test.py 
 ```
