@@ -73,10 +73,17 @@ class Weather:
 
     def get_city_with_max_attribute(self, attribute_name):
         cities_attribute = self.get_attribute_across_cities(attribute_name)
-        max_attribute = max(cities_attribute, key=lambda data: data[1])[1]
-        max_attributes = filter(lambda x: x[1] == max_attribute, cities_attribute)
+        
+        # Get max value across all cities
+        max_attribute = map(lambda x: x[1], cities_attribute)
+        max_attribute = sum(max_attribute, [])
+        max_attribute = max(max_attribute)
+
+        # Get all cities with max value
+        max_attributes = filter(lambda x: max_attribute in x[1], cities_attribute)
         max_attributes = list(max_attributes)
         max_attributes.sort(key=lambda data: data[0])
+        
         return max_attributes[0][0]
 
     def check_if_snow(self):
